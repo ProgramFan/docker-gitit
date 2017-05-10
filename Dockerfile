@@ -2,20 +2,19 @@
 
 # Use debian 9 (stretch) for gitit 0.12
 FROM debian:9
-MAINTAINER Zhang Yang "zyangmath@gmail.com"
+LABEL maintainer="Yang Zhang <zyangmath@gmail.com>"
 
+# Add gitit packages
 ENV DEBIAN_FRONTEND noninteractive
-
-# install git, ssh, supervisor
 RUN apt-get update && apt-get install -y \
-    git gitit supervisor libghc-zlib-dev
+    locales git gitit libghc-filestore-data \
+    supervisor gosu
 
-RUN echo "root:yangzhang" | chpasswd
+# Use an UTF-8 locale
+RUN locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
 
-VOLUME ["/data/gitit"]
-WORKDIR /data/gitit
-
-ADD . /data/gitit
-
-EXPOSE 7500
-ENTRYPOINT ["/data/gitit/docker-entrypoint.sh"]
+# Basic system settings
+RUN echo "root:123456" | chpasswd
