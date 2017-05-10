@@ -9,7 +9,7 @@ available.
 This image tries hard to be small and simple. It contains only gitit related
 tools and is intended to be used as a base image for real gitit applications.
 See
-[gitit-templates-enhanced](https://github.com/programfan/gitit-template-enhanced)
+[gitit-templates-enhanced](https://github.com/ProgramFan/gitit-templates-enhanced)
 for an example.
 
 `utils` contains some interesting utilities for solving integrating problems.
