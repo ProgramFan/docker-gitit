@@ -7,7 +7,7 @@ LABEL maintainer="Yang Zhang <zyangmath@gmail.com>"
 # Add gitit packages
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get install -y \
-    locales git gitit libghc-filestore-data \
+    locales git pandoc pandoc-data gitit libghc-filestore-data \
     supervisor gosu
 
 # Use an UTF-8 locale
