@@ -6,7 +6,6 @@ FROM debian:8
 LABEL maintainer="Yang Zhang <zyangmath@gmail.com>"
 
 ENV DEBIAN_FRONTEND noninteractive
-# Install basic tools which will not be removed
 # The following command installs custom ghc and use cabal to install gitit
 # into system path. The building tools and intermediate haskell libraries are
 # then removed to keep the image slim. The custom ghc installation is copied
